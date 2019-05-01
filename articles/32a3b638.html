@@ -98,17 +98,23 @@
 
 
 
-  <meta name="description" content="活到老，码到老">
-<meta name="keywords" content="coder">
-<meta property="og:type" content="website">
-<meta property="og:title" content="codernice&#39;s blog">
-<meta property="og:url" content="https://codernice.github.io/index.html">
+  <meta name="description" content="Wish是一款移动电商购物APP，截至2017年5月初，Wish手机应用APP在全球27个国家的购物类APP中排名第一，在安卓应用商店全类别应用中排名第7，在美国App Store全类别应用中排名第14，是目前跨境电商平台中的佼佼者。小编发现，这样一个主流跨境电商平台，除了官方文档外，很难找到API对接的介绍。所以今天，小编就给大家介绍一下Wish平台API的对接。文章主要介绍流程，最后会附上源码">
+<meta name="keywords" content="电商,API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wish API对接教程">
+<meta property="og:url" content="https://codernice.github.io/articles/32a3b638.html">
 <meta property="og:site_name" content="codernice&#39;s blog">
-<meta property="og:description" content="活到老，码到老">
+<meta property="og:description" content="Wish是一款移动电商购物APP，截至2017年5月初，Wish手机应用APP在全球27个国家的购物类APP中排名第一，在安卓应用商店全类别应用中排名第7，在美国App Store全类别应用中排名第14，是目前跨境电商平台中的佼佼者。小编发现，这样一个主流跨境电商平台，除了官方文档外，很难找到API对接的介绍。所以今天，小编就给大家介绍一下Wish平台API的对接。文章主要介绍流程，最后会附上源码">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13855902-45d9871d641b1579.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/771/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13855902-9d9747da720deaba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/757/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13855902-4c3e04a9bda9ff05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/513/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13855902-5c34c79a6961220a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/505/format/webp">
+<meta property="og:updated_time" content="2019-04-29T09:03:08.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codernice&#39;s blog">
-<meta name="twitter:description" content="活到老，码到老">
+<meta name="twitter:title" content="Wish API对接教程">
+<meta name="twitter:description" content="Wish是一款移动电商购物APP，截至2017年5月初，Wish手机应用APP在全球27个国家的购物类APP中排名第一，在安卓应用商店全类别应用中排名第7，在美国App Store全类别应用中排名第14，是目前跨境电商平台中的佼佼者。小编发现，这样一个主流跨境电商平台，除了官方文档外，很难找到API对接的介绍。所以今天，小编就给大家介绍一下Wish平台API的对接。文章主要介绍流程，最后会附上源码">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13855902-45d9871d641b1579.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/771/format/webp">
 
 
 
@@ -116,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://codernice.github.io/">
+  <link rel="canonical" href="https://codernice.github.io/articles/32a3b638">
 
 
 
@@ -126,7 +132,7 @@
   };
 </script>
 
-  <title>codernice's blog</title>
+  <title>Wish API对接教程 | codernice's blog</title>
   
 
 
@@ -174,8 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,7 +218,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -309,9 +314,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -326,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://codernice.github.io/articles/6b580174.html">
+    <link itemprop="mainEntityOfPage" href="https://codernice.github.io/articles/32a3b638.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="codernice">
@@ -343,393 +348,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/articles/6b580174.html" class="post-title-link" itemprop="url">使用Hexo开源博客系统，轻松搭建你的个人博客（2）- 配置篇</a>
-              
-            
-          </h1>
-        
+          <h1 class="post-title" itemprop="name headline">Wish API对接教程
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-30 21:16:36" itemprop="dateCreated datePublished" datetime="2019-04-30T21:16:36+08:00">2019-04-30</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/articles/6b580174.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/articles/6b580174.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-            <span id="/articles/6b580174.html" class="leancloud_visitors" data-flag-title="使用Hexo开源博客系统，轻松搭建你的个人博客（2）- 配置篇">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              上一章节，我们介绍了Hexo的基础搭建，搭建完大家一定发现，是英文版本的，并且页面有点丑陋。这一章节，就来跟大家介绍Hexo的配置和主题的设置。
-站点信息上一章有跟大家提到过_config.yml这个文件，这个我们先称之为站点全局的配置文件，后续我们说到主题的时候，也会有一个这样的文件，暂时称它主题
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/articles/6b580174.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://codernice.github.io/articles/65209.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="codernice">
-      <meta itemprop="description" content="活到老，码到老">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/49989052?s=400&u=6651a29afb741b0f80b2eab993ee968a419c7492&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="codernice's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/articles/65209.html" class="post-title-link" itemprop="url">使用Hexo开源博客系统，轻松搭建你的个人博客（1）</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-29 17:12:24" itemprop="dateCreated datePublished" datetime="2019-04-29T17:12:24+08:00">2019-04-29</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/articles/65209.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/articles/65209.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-            <span id="/articles/65209.html" class="leancloud_visitors" data-flag-title="使用Hexo开源博客系统，轻松搭建你的个人博客（1）">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Hexo 是一个轻量级、简洁、高效且高逼格的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。同时有着丰富的主题，官网或者GitHub都可以轻松下载到。由于Hexo博客都是静态文件，所以推荐部署在Github上，不需要额外的服务器和后台，
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/articles/65209.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://codernice.github.io/articles/50456.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="codernice">
-      <meta itemprop="description" content="活到老，码到老">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/49989052?s=400&u=6651a29afb741b0f80b2eab993ee968a419c7492&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="codernice's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/articles/50456.html" class="post-title-link" itemprop="url">Wish API对接教程</a>
               
             
           </h1>
@@ -791,8 +411,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/articles/50456.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/articles/50456.html" itemprop="commentCount"></span>
+                <a href="/articles/32a3b638.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/articles/32a3b638.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -800,7 +420,7 @@
 
           
           
-            <span id="/articles/50456.html" class="leancloud_visitors" data-flag-title="Wish API对接教程">
+            <span id="/articles/32a3b638.html" class="leancloud_visitors" data-flag-title="Wish API对接教程">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -831,22 +451,10 @@
       
 
       
-        
-          
-            <p>
-              Wish是一款移动电商购物APP，截至2017年5月初，Wish手机应用APP在全球27个国家的购物类APP中排名第一，在安卓应用商店全类别应用中排名第7，在美国App Store全类别应用中排名第14，是目前跨境电商平台中的佼佼者。小编发现，这样一个主流跨境电商平台，除了官方文档外，很难找到API
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/articles/50456.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <p>Wish是一款移动电商购物APP，截至2017年5月初，Wish手机应用APP在全球27个国家的购物类APP中排名第一，在安卓应用商店全类别应用中排名第7，在美国App Store全类别应用中排名第14，是目前跨境电商平台中的佼佼者。<br>小编发现，这样一个主流跨境电商平台，除了官方文档外，很难找到API对接的介绍。所以今天，小编就给大家介绍一下Wish平台API的对接。文章主要介绍流程，最后会附上源码。</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p>首先，来看一下<a href="https://china-merchant.wish.com/documentation/api/v2" target="_blank" rel="noopener">官方文档</a>，找到文档，第一步先看怎么授权。如下图，直奔主题，查看授权步骤。<br><img src="https://upload-images.jianshu.io/upload_images/13855902-45d9871d641b1579.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/771/format/webp" alt><br>授权步骤链接：<br><a href="https://merchant.wish.com/documentation/oauth" target="_blank" rel="noopener">https://merchant.wish.com/documentation/oauth</a>，打开链接会发现，wish授权的步骤还算略显麻烦的，主要有五个步骤。<br><img src="https://upload-images.jianshu.io/upload_images/13855902-9d9747da720deaba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/757/format/webp" alt><br>首先后台需要新建一个APP，生成{client_id}和{client_secret}，需要先填写一个回调地址。然后访问<a href="https://merchant.wish.com/oauth/authorize?client_id={client_id}" target="_blank" rel="noopener">https://merchant.wish.com/oauth/authorize?client_id={client_id}</a>，输入用户名和密码登录。成功后会跳转到你的回调地址，后面附带参数code={authorization_code}，如<a href="https://example.redirect.uri.com?code={authorization_code}" target="_blank" rel="noopener">https://example.redirect.uri.com?code={authorization_code}</a>，这个{authorization_code}在后面请求会用到。<br>下一步，就是获取token，文档写的挺详细，如下图。需要POST请求地址：<a href="https://merchant.wish.com/api/v2/oauth/access_token" target="_blank" rel="noopener">https://merchant.wish.com/api/v2/oauth/access_token</a>。<br>其中参数client_id和client_secret是在创建app的时候会生成，code是上一步生成的{authorization_code}，grant_type固定字符串“authorization_code”，redirect_uri为配置的回调地址。<br><img src="https://upload-images.jianshu.io/upload_images/13855902-4c3e04a9bda9ff05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/513/format/webp" alt><br>请求成功会返回一串json字符串，其中，access_token就是我们需要得到的token.由于这个token的时效是30天，所以30天后我们需要重新请求，获得新的token。因此，返回的json中还有一个关键参数，就是refresh_token，用这个参数，我们可以获得新的token，如下图。<br><img src="https://upload-images.jianshu.io/upload_images/13855902-5c34c79a6961220a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/505/format/webp" alt><br>同样是POST，地址换成<a href="https://merchant.wish.com/api/v2/oauth/refresh_token" target="_blank" rel="noopener">https://merchant.wish.com/api/v2/oauth/refresh_token</a>，其中三个参数与上个步骤一致，refresh_token就是上面提到的。<br>授权搞定，已经完成一大半了，其他接口大同小异。重点就是记录好token过期时间，在过期之前更新，避免影响正常调用。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>如下是源码，包含授权、订单同步和发货回传。需要对接其他方法，可查看官方文档，参考这几个方法，依葫芦画瓢即可。<br>源代码：<a href="https://github.com/codernice/WishAPI.git" target="_blank" rel="noopener">https://github.com/codernice/WishAPI.git</a></p>
+
       
     </div>
 
@@ -867,14 +475,93 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/电商/" rel="tag"># 电商</a>
+          
+            <a href="/tags/API/" rel="tag"># API</a>
+          
+        </div>
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/articles/50456.html" rel="prev" title="Wish API对接教程">
+                Wish API对接教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -884,14 +571,19 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -911,8 +603,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -975,10 +676,6 @@
                     
                       
                     
-                      
-                    
-                      
-                    
                     <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
@@ -1021,6 +718,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1174,6 +888,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -1209,7 +927,7 @@
     appId: 'MSrfJzlJlW3tUJ53khEgc0Na-gzGzoHsz',
     appKey: 'YdOhmI1UQaeECulOKxPMeJuq',
     placeholder: '留下邮箱，有回复时你将收到提醒，邮箱不会被公开',
-    avatar: 'mp',
+    avatar: 'monsterid',
     meta: guest,
     pageSize: '10' || 10,
     visitor: false,
@@ -1219,6 +937,8 @@
 
 
 
+
+  
 
 
   
@@ -1230,38 +950,35 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1286,9 +1003,7 @@
             });
           };
           
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
+            addCount(Counter);
           
         });
     });
